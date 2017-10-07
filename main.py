@@ -16,7 +16,10 @@ def GetUrl(url):
     soup = BeautifulSoup(wb.text,'lxml')
     title = soup.select('#archive > div > div.post-meta > p > a.archive-title')
     for i in title:
-        print(i.get_text())
-        print(i.get('href'))
+        WriteTxt(i.get_text(),i.get('href'))
+
+def WriteTxt(path,txt):
+    with open(path,'w') as f:
+	f.write(txt)
 
 foo()
