@@ -18,8 +18,12 @@ def GetUrl(url):
     for i in title:
         WriteTxt(i.get_text(),i.get('href'))
 
+
 def WriteTxt(path,txt):
-    with open(path,'w') as f:
-	f.write(txt)
+    try:
+    	with open('/home/lichao/xxx/'+path+'.txt','w') as f:
+            f.write(txt)
+    except:
+	    pass
 
 foo()
